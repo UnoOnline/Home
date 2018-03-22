@@ -748,3 +748,34 @@ input.html-text-box {background-color:ffffff;font-family:Arial;font-size:18pt;co
 <head>
 <script src="jquery-3.3.1.min.js"></script>
 </head>
+  <body>
+ 
+    <div id="gamepadPrompt"></div>
+ 
+    <script>
+    function canGame() {
+        return "getGamepads" in navigator;
+    }
+ 
+    $(document).ready(function() {
+ 
+        if(canGame()) {
+ 
+            var prompt = "To begin using your gamepad, connect it and press any button!";
+            $("#gamepadPrompt").text(prompt);
+ 
+            $(window).on("gamepadconnected", function() {
+                $("#gamepadPrompt").html("Gamepad connected!");
+                console.log("connection event");
+            });
+ 
+            $(window).on("gamepaddisconnected", function() {
+                console.log("disconnection event");
+                $("#gamepadPrompt").text(prompt);
+            });
+ 
+        }
+ 
+    });
+    </script>
+    </body>
