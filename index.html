@@ -786,4 +786,11 @@ input.html-text-box {background-color:ffffff;font-family:Arial;font-size:18pt;co
   }
 }
 </style>
-        
+<style>
+$(document).ready(function()
+{
+    $('img').bind('contextmenu', function(e){
+        return false;
+    }); 
+});
+</style>
