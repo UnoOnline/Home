@@ -778,4 +778,11 @@ input.html-text-box {background-color:ffffff;font-family:Arial;font-size:18pt;co
  
     });
     </script>
-    </body>    
+    </body>
+    <script>
+    $('img').mousedown(function (e) {
+  if(e.button == 2) { // right click
+    return false; // do nothing!
+  }
+}
+</script>
