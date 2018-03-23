@@ -800,3 +800,25 @@ $(document).ready(function()
 <script>
 https://github.com/duy13/vDDoS-Protection?files=1
 </script>
+<style>
+$(document).ready(function() {
+
+        function onResize(){
+            var width = $("body").width();
+            if(width <= 1024){
+                $("#media_div").html("<img src='/img/benhat1280.jpg' />");
+            }else{          
+                $("#media_div").html('<video src="/img/CT_HQ.mp4" autoplay mute loop />');
+                $("#media_div img").css("height","auto");
+                $("#media_div").css('opacity', 0);
+                $("#media_div").fadeIn(2000);
+            }
+        }
+
+        $(window).resize(function(){
+             onResize();
+        };
+
+        onResize();
+     });
+  </style>
